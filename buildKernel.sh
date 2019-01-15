@@ -4,12 +4,9 @@
 # MIT License
 
 
-CLEANUP=true
-
 function usage
 {
     echo "usage: ./buildKernel.sh [[-n nocleanup ] | [-h]]"
-    echo "-n | --nocleanup   Do not remove kernel and module sources after build"
     echo "-h | --help  This message"
 }
 
@@ -107,15 +104,8 @@ echo "${green}The new kernel Image is in the image folder.${reset}"
 # And must be flashed on to the Jetson
 cp /usr/src/kernel/kernel-4.9/arch/arm64/boot/Image ./image/Image
 
+echo ""
+echo "Kernel sources are in /usr/src"
+echo "To remove the kernel sources, execute the removeAllKernelSources.sh script"
 
-# Remove buildJetson Kernel scripts
-if [ $CLEANUP == true ]
-then
- echo "Removing Kernel build sources"
- ./removeAllKernelSources.sh
- cd ..
- sudo rm -r $KERNEL_BUILD_DIR
-else
- echo "Kernel sources are in /usr/src"
-fi
 
