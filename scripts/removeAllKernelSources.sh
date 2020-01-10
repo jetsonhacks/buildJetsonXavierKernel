@@ -3,5 +3,5 @@
 cd /usr/src
 rm -r kernel
 rm -r hardware
-rm l4t-sources-31-1-0
+rm public_sources.tbz2
 
