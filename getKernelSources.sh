@@ -4,7 +4,7 @@
 # MIT License
 
 JETSON_MODEL="AGX Xavier"
-L4T_TARGET="32.3.1"
+L4T_TARGET="32.4.3"
 SOURCE_TARGET="/usr/src"
 KERNEL_RELEASE="4.9"
 

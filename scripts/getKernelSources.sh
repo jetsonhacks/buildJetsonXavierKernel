@@ -15,7 +15,7 @@ fi
 cd "$SOURCE_TARGET"
 echo "$PWD"
 # For this version, TX2 and Xavier have the same source files
-wget -N https://developer.nvidia.com/embedded/dlc/r32-3-1_Release_v1.0/Sources/T186/public_sources.tbz2
+wget -N https://developer.nvidia.com/embedded/L4T/r32_Release_v4.3/sources/T186/public_sources.tbz2
 # l4t-sources is a tbz2 file
 tar -xvf public_sources.tbz2  Linux_for_Tegra/source/public/kernel_src.tbz2 --strip-components=3
 tar -xvf kernel_src.tbz2
@@ -28,7 +28,7 @@ zcat /proc/config.gz > .config
 cp .config config.orig
 # Default to the current local version
 KERNEL_VERSION=$(uname -r)
-# For L4T 32.3 the kernel is 4.9.140-tegra ; 
+# For L4T 32.4.3 the kernel is 4.9.140-tegra ; 
 # Everything after '4.9.140' is the local version
 # This removes the suffix
 LOCAL_VERSION=${KERNEL_VERSION#$"4.9.140"}
