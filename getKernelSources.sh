@@ -1,10 +1,10 @@
 #!/bin/bash
 # Get the kernel source for NVIDIA Jetson AGX Xavier Developer Kit, L4T
-# Copyright (c) 2016-2020 Jetsonhacks 
+# Copyright (c) 2016-2021 Jetsonhacks, julian3xl
 # MIT License
 
 JETSON_MODEL="AGX Xavier"
-L4T_TARGET="32.3.1"
+L4T_TARGET="32.5.1"
 SOURCE_TARGET="/usr/src"
 KERNEL_RELEASE="4.9"
 
@@ -32,7 +32,7 @@ JETSON_L4T=""
 # is to use dpkg
 # L4T 32.3.1, NVIDIA added back /etc/nv_tegra_release
 function check_L4T_version()
-{   
+{
         if [ -f /etc/nv_tegra_release ]; then
 		JETSON_L4T_STRING=$(head -n 1 /etc/nv_tegra_release)
 		JETSON_L4T_RELEASE=$(echo $JETSON_L4T_STRING | cut -f 2 -d ' ' | grep -Po '(?<=R)[^;]+')
@@ -97,7 +97,7 @@ set -e
 # Determine the correct kernel version
 # The KERNEL_BUILD_VERSION is the release tag for the JetsonHacks buildKernel repository
 KERNEL_BUILD_VERSION=master
-if [ "$JETSON_BOARD" == "$JETSON_MODEL" ] ; then 
+if [ "$JETSON_BOARD" == "$JETSON_MODEL" ] ; then
   if [ $JETSON_L4T == "$L4T_TARGET" ] ; then
      KERNEL_BUILD_VERSION=$L4T_TARGET
   else
@@ -106,7 +106,7 @@ if [ "$JETSON_BOARD" == "$JETSON_MODEL" ] ; then
    echo "==== L4T Kernel Version Mismatch! ============="
    tput sgr0
    echo ""
-   echo "This repository is for modifying the kernel for a L4T "$L4T_TARGET "system." 
+   echo "This repository is for modifying the kernel for a L4T "$L4T_TARGET "system."
    echo "You are attempting to modify a L4T "$JETSON_MODEL "system with L4T "$JETSON_L4T
    echo "The L4T releases must match!"
    echo ""
@@ -114,7 +114,7 @@ if [ "$JETSON_BOARD" == "$JETSON_MODEL" ] ; then
    echo ""
    exit 1
   fi
-else 
+else
    tput setaf 1
    echo "==== Jetson Board Mismatch! ============="
    tput sgr0
