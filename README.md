@@ -1,5 +1,5 @@
 # buildJetsonXavierKernel
-Scripts to help build the 4.9.140 kernel and modules onboard the Jetson AGX Xavier (L4T 32.4.1, JetPack 4.4 DP).
+Scripts to help build the 4.9.140 kernel and modules onboard the Jetson AGX Xavier (L4T 32.4.2, JetPack 4.4 DP).
 
 <em><strong>Note:</strong> The kernel source version must match the version of firmware flashed on the Jetson. For example, the source for the 4.9.140 kernel here is matched with L4T 32.4.1. This kernel compiled using this source tree may not work with newer versions or older versions of L4T.</em>
 
@@ -51,14 +51,13 @@ The copyImage.sh script copies the Image to the current device. If you are build
 
 July, 2020
 * Initial release
+* vL4T32.4.2
+* L4T 32.4.2 (JetPack 4.4 DP)
+
+July, 2020
+* Initial release
 * vL4T32.4.1
 * L4T 32.4.1 (JetPack 4.4 DP)
-
-January, 2020
-* Initial release
-* vL4T32.3.1
-* L4T 32.3.1 (JetPack 4.3)
-
 
 ## License
 MIT License
