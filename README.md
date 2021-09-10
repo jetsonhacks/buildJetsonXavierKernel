@@ -1,11 +1,11 @@
 # buildJetsonXavierKernel
-Scripts to help build the 4.9.140 kernel and modules onboard the Jetson AGX Xavier (L4T 32.4.2, JetPack 4.4 DP).
+Scripts to help build the 4.9.140 kernel and modules onboard the Jetson AGX Xavier (L4T 32.4.3, JetPack 4.4).
 
-<em><strong>Note:</strong> The kernel source version must match the version of firmware flashed on the Jetson. For example, the source for the 4.9.140 kernel here is matched with L4T 32.4.1. This kernel compiled using this source tree may not work with newer versions or older versions of L4T.</em>
+<em><strong>Note:</strong> The kernel source version must match the version of firmware flashed on the Jetson. For example, the source for the 4.9.140 kernel here is matched with L4T 32.4.3. This kernel compiled using this source tree may not work with newer versions or older versions of L4T.</em>
 
 As of this writing, the "official" way to build the Jetson AGX Xavier kernel is to use a cross compiler on a Linux PC. This is an alternative which builds the kernel onboard the Jetson itself. These scripts will download the kernel source to the Jetson AGX Xavier, and then compile the kernel and selected modules. The newly compiled kernel can then be installed. The kernel sources and build objects consume ~3GB.
 
-These scripts are for building the kernel for the 64-bit L4T 32.4.1 (Ubuntu 18.04 based) operating system on the NVIDIA Jetson AGX Xavier. The scripts should be run directly after flashing the Jetson with L4T 32.3.1 from a host PC. There are six scripts:
+These scripts are for building the kernel for the 64-bit L4T 32.4.3 (Ubuntu 18.04 based) operating system on the NVIDIA Jetson AGX Xavier. The scripts should be run directly after flashing the Jetson with L4T 32.4.3 from a host PC, or after flashing an SD card. There are six scripts:
 
 <strong>getKernelSources.sh</strong>
 
@@ -48,11 +48,11 @@ Removes all of the kernel sources and compressed source files. You may want to m
 The copyImage.sh script copies the Image to the current device. If you are building the kernel on an external device, for example a SSD, you will probably want to copy the Image file over to the eMMC in the eMMC's /boot directory. The Jetson will usually try to boot from the eMMC before switching to a different device. Study the boot sequence of the Jetson to properly understand which Image file is being used.
 
 ### Release Notes
-
 July, 2020
-* Initial release
-* vL4T32.4.2
-* L4T 32.4.2 (JetPack 4.4 DP)
+* JetPack 4.4
+* vL4T32.4.3
+* L4T 32.4.3 (JetPack 4.4)
+* Thank you @jabratn for pull request!
 
 July, 2020
 * Initial release
@@ -63,6 +63,7 @@ January, 2020
 * Preview release
 * vL4T32.3.1
 * L4T 32.3.1 (JetPack 4.3)
+
 
 ## License
 MIT License
