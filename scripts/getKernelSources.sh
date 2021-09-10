@@ -5,6 +5,8 @@ apt-get update
 apt-get install pkg-config -y
 # We use 'make menuconfig' to edit the .config file; install dependencies
 apt-get install libncurses5-dev -y
+
+
 echo "Installing kernel sources in: ""$SOURCE_TARGET"
 if [ ! -d "$SOURCE_TARGET" ]; then
    # Target directory does not exist; create
@@ -14,15 +16,19 @@ fi
 
 cd "$SOURCE_TARGET"
 echo "$PWD"
-# For this version, TX2 and Xavier have the same source files
-wget -N https://developer.nvidia.com/embedded/dlc/r32-3-1_Release_v1.0/Sources/T186/public_sources.tbz2
+# For this version, TX2 and AGX Xavier and Xavier NX have the same source files
+wget -N https://developer.nvidia.com/embedded/L4T/r32_Release_v4.2/Sources/T186/public_sources.tbz2
 # l4t-sources is a tbz2 file
 tar -xvf public_sources.tbz2  Linux_for_Tegra/source/public/kernel_src.tbz2 --strip-components=3
 tar -xvf kernel_src.tbz2
 # Space is tight; get rid of the compressed kernel source
 rm -r kernel_src.tbz2
 cd kernel/kernel-4.9
-# Go get the default config file; this becomes the new system configuration
+# Copy over the module symbols
+# These should be part of the default rootfs
+# When the kernel itself is compiled, it should generate its own Module.symvers and place it here
+cp /usr/src/linux-headers-4.9.140-tegra-ubuntu18.04_aarch64/kernel-4.9/Module.symvers .
+# Go get the current kernel config file; this becomes the base system configuration
 zcat /proc/config.gz > .config
 # Make a backup of the original configuration
 cp .config config.orig
