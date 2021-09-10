@@ -59,6 +59,11 @@ July, 2020
 * vL4T32.4.1
 * L4T 32.4.1 (JetPack 4.4 DP)
 
+January, 2020
+* Preview release
+* vL4T32.3.1
+* L4T 32.3.1 (JetPack 4.3)
+
 ## License
 MIT License
 
