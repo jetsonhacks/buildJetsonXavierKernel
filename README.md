@@ -59,7 +59,6 @@ July, 2020
 * L4T 32.4.3 (JetPack 4.4)
 * Thank you @jabratn for pull request!
 
-
 July, 2020
 * Initial release
 * vL4T32.4.1
