@@ -50,6 +50,10 @@ Removes all of the kernel sources and compressed source files. You may want to m
 
 The copyImage.sh script copies the Image to the current device. If you are building the kernel on an external device, for example a SSD, you will probably want to copy the Image file over to the eMMC in the eMMC's /boot directory. The Jetson will usually try to boot from the eMMC before switching to a different device. Study the boot sequence of the Jetson to properly understand which Image file is being used.
 
+### Kernel notes
+Here are some helpful notes for applying a new kernel for an AGX Xavier from @fmolinelli : https://github.com/jetsonhacks/buildJetsonXavierKernel/issues/9#issuecomment-943567344
+Thank you Flavio!
+
 ## Release Notes
 
 ### September, 2021
